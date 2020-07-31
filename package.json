@@ -1,0 +1,23 @@
+{
+  "name": "backend-modelize",
+  "version": "1.0.0",
+  "description": "Backend API for an app to find the perfect model for your next project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Hans-Derly Rameau",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^17.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.27.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1"
+  }
+}
