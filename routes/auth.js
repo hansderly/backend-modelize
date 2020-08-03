@@ -17,7 +17,7 @@ const signupSchema = Joi.object({
 // ! RESGISTER
 router.post('/signup', validateBody(signupSchema), (req, res) => {
 	const { username, phone, password } = req.body;
-	// console.log(username, phone, password);
+	console.log(username, phone, password);
 
 	let sql1 = 'SELECT * FROM models WHERE phone = ?';
 	db.query(sql1, phone, (err, result) => {
