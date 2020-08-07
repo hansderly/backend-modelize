@@ -18,6 +18,8 @@ const signupSchema = Joi.object({
 router.post('/signup', validateBody(signupSchema), (req, res) => {
 	const { username, phone, password } = req.body;
 	console.log(username, phone, password);
+	const baseURL = process.env.AVATAR_BASE_URL;
+	const avatarPath = baseURL + 'placeholder-avatar.png';
 
 	let sql1 = 'SELECT * FROM models WHERE phone = ?';
 	db.query(sql1, phone, (err, result) => {
@@ -27,10 +29,15 @@ router.post('/signup', validateBody(signupSchema), (req, res) => {
 		// ! hash password
 		const hashPassword = bcrypt.hashSync(password, saltRound);
 		let sql =
-			'INSERT INTO models (username, phone, password) VALUES (?, ?, ?)';
-		db.query(sql, [username, phone, hashPassword], (err, result) => {
-			console.log(result);
-		});
+			'INSERT INTO models (username, phone, password, avatar_path) VALUES (?, ?, ?, ?)';
+		db.query(
+			sql,
+			[username, phone, hashPassword, avatarPath],
+			(err, result) => {
+				console.log(result);
+				res.status(201).json({ message: 'User added succesfully' });
+			}
+		);
 	});
 });
 

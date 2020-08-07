@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 
-const addfeed = require('./routes/addfeed');
+const feed = require('./routes/feed');
 const auth = require('./routes/auth');
 const feeds = require('./routes/feeds');
 const models = require('./routes/models');
@@ -16,7 +16,7 @@ app.use('/uploads',express.static('uploads'));
 
 // * Routes
 app.use('/api/auth', auth);
-app.use('/api/feed', addfeed);
+app.use('/api/feed', feed);
 app.use('/api/feeds', feeds);
 app.use('/api/models', models);
 
