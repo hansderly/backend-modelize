@@ -10,7 +10,7 @@ router.post('/', upload.single('image'), (req, res) => {
 	const baseURL = process.env.ASSETS_BASE_URL;
 	const imagePath = baseURL + filename;
 	// const modelID = req.body.modelID;
-	const modelID = 1;
+	const modelID = 2;
 	console.log(imagePath, baseURL, req.file, filename);
 
 	// * Add to database
