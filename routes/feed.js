@@ -1,16 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const moment = require('moment');
+require('moment/locale/fr');
 
 const upload = require('../utils/multer');
 const db = require('../database/db');
 
 router.post('/', upload.single('image'), (req, res) => {
+	// console.log(req.body)
+	const modelID = req.body.modelID;
 	const filename = req.file.filename;
 	const baseURL = process.env.ASSETS_BASE_URL;
 	const imagePath = baseURL + filename;
-	// const modelID = req.body.modelID;
-	const modelID = 2;
+	// const modelID = 2;
 	console.log(imagePath, baseURL, req.file, filename);
 
 	// * Add to database

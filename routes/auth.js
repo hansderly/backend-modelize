@@ -68,24 +68,28 @@ router.post('/signin', validateBody(signinSchema), (req, res) => {
 
 			const isMatch = bcrypt.compareSync(password, hashPassword);
 
-			isMatch
-				? (token = jwt.sign(
-						{
-							userId,
-							username,
-							first_name,
-							last_name,
-							phone,
-							color,
-							hair,
-							height,
-							avatar_path,
-						},
-						process.env.JWT_SECRET_KEY
-				  ))
-				: null;
+			if (!isMatch)
+				return res
+					.status(404)
+					.json({ message: 'Invalid email and/or password' });
 
-			console.log(token);
+			isMatch &&
+				(token = jwt.sign(
+					{
+						userId,
+						username,
+						first_name,
+						last_name,
+						phone,
+						color,
+						hair,
+						height,
+						avatar_path,
+					},
+					process.env.JWT_SECRET_KEY
+				));
+
+			// console.log(token);
 			res.status(201).send(token);
 		}
 	});

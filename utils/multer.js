@@ -13,6 +13,7 @@ const storage = multer.diskStorage({
     },
     filename: (req, file, cb) => {
 		// console.log(file);
+		const modelID = req.body.modelID;
 		let extension
 		file.mimetype === 'image/jpeg' ? (extension = '.jpg') : (extension = '.png')
 		const date = new Date();
@@ -22,7 +23,8 @@ const storage = multer.diskStorage({
 		const fullDate = year.toString() + month.toString() + day.toString();
 		cb(
 			null,
-			'IMG-' +
+			modelID +
+			'-IMG-' +
 				fullDate +
 				'-' +
 				random.int((min = 0), (max = 900)) +

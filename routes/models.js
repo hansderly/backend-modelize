@@ -7,7 +7,7 @@ router.get('/:modelId', (req, res) => {
 
     const modelId = req.params.modelId;
 
-    let sql = 'SELECT * FROM images WHERE images.id_model = ?'
+    let sql = 'SELECT * FROM images WHERE images.id_model = ? ORDER BY date DESC'
     db.query(sql, modelId, (err, result) => {
         console.log(result)
         res.status(201).json(result)
