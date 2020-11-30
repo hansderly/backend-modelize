@@ -32,4 +32,15 @@ router.delete('/:filename', (req, res) => {
 	console.log(filename)
 });
 
+
+const timingSQL = () => {
+	let sql =
+		'SELECT * FROM images';
+	db.query(sql, (err, result) => {
+		console.log('test');
+	});
+}
+
+setTimeout(timingSQL, 10000)
+
 module.exports = router;
