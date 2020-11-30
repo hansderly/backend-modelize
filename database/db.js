@@ -1,10 +1,10 @@
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'root',
-	password: '',
-	database: 'modelize_db',
+	host: 'db-modelize-do-user-8371362-0.b.db.ondigitalocean.com',
+	user: 'doadmin',
+	password: process.env.DB_PASS,
+	database: 'db-modelize',
 });
 
 // const connection = mysql.createConnection({
