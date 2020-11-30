@@ -10,7 +10,7 @@ router.post('/', upload.single('image'), (req, res) => {
 	// console.log(req.body)
 	const modelID = req.body.modelID;
 	const filename = req.file.filename;
-	const baseURL = process.env.ASSETS_BASE_URL;
+	const baseURL = process.env.BASE_URL + 'uploads/';
 	const imagePath = baseURL + filename;
 	// const modelID = 2;
 	console.log(imagePath, baseURL, req.file, filename);
@@ -24,6 +24,12 @@ router.post('/', upload.single('image'), (req, res) => {
 		// console.log(result);
 	});
 	res.status(201).json({ message: 'Image upload successfully' });
+});
+
+
+router.delete('/:filename', (req, res) => {
+	const filename = req.params.filename;
+	console.log(filename)
 });
 
 module.exports = router;

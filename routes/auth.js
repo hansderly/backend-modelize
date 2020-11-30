@@ -18,8 +18,8 @@ const signupSchema = Joi.object({
 router.post('/signup', validateBody(signupSchema), (req, res) => {
 	const { username, phone, password } = req.body;
 	console.log(username, phone, password);
-	const baseURL = process.env.AVATAR_BASE_URL;
-	const avatarPath = baseURL + 'test.jpg';
+	const baseURL = process.env.BASE_URL;
+	const avatarPath = baseURL + 'uploads/avatar/' + 'test.jpg';
 
 	let sql1 = 'SELECT * FROM models WHERE phone = ?';
 	db.query(sql1, phone, (err, result) => {
