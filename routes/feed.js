@@ -10,7 +10,8 @@ router.post('/', upload.single('image'), (req, res) => {
 	// console.log(req.body)
 	const modelID = req.body.modelID;
 	const filename = req.file.filename;
-	const baseURL = process.env.BASE_URL + 'uploads/';
+	// const baseURL = process.env.BASE_URL + 'uploads/';
+	const baseURL = 'https://modelize-api.herokuapp.com/uploads/';
 	const imagePath = baseURL + filename;
 	// const modelID = 2;
 	console.log(imagePath, baseURL, req.file, filename);
