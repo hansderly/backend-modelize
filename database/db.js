@@ -1,20 +1,18 @@
 const mysql = require('mysql');
 
-// const connection = mysql.createConnection({
-// 	host: 'db-modelize-do-user-8371362-0.b.db.ondigitalocean.com',
-// 	user: 'doadmin',
-// 	password: 'nbg0vzg6cakwsnwe',
-// 	database: 'db-modelize',
-// 	port: 25060,
-// 	ssl: 'REQUIRED'
-// });
-
 const connection = mysql.createConnection({
-    host: 'sql220.main-hosting.eu',
-    user: 'u191982321_hans',
-    password: 'RxYAR+F3]c',
-    database: 'u191982321_modelize',
+	host: 'localhost',
+	user: 'root',
+	password: '',
+	database: 'modelize_db',
 });
+
+// const connection = mysql.createConnection({
+//     host: '213.190.6.43',
+//     user: 'u191982321_dey',
+//     password: '#Princeandy95',
+//     database: 'u191982321_api',
+// });
 
 connection.connect(function (err) {
     if (err) throw err;

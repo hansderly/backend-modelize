@@ -30,17 +30,11 @@ router.post('/', upload.single('image'), (req, res) => {
 router.delete('/:filename', (req, res) => {
 	const filename = req.params.filename;
 	console.log(filename)
+
+	let sql2 = 'DELETE FROM images WHERE filename = ? ';
+	db.query(sql2, filename, (err, result) => {
+		console.log(result)
+	})
 });
-
-
-const timingSQL = () => {
-	let sql =
-		'SELECT * FROM images';
-	db.query(sql, (err, result) => {
-		console.log('test');
-	});
-}
-
-setTimeout(timingSQL, 10000)
 
 module.exports = router;
