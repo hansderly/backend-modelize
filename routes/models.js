@@ -27,6 +27,6 @@ const handleDisconnect = () => {
     });
 }
 
-setTimeout(handleDisconnect, 50000)
+setTimeout(handleDisconnect, 5000)
 
 module.exports = router;
