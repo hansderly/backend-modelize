@@ -1,18 +1,18 @@
 const mysql = require('mysql');
 
-const connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'root',
-	password: '',
-	database: 'modelize_db',
-});
-
 // const connection = mysql.createConnection({
-//     host: '213.190.6.43',
-//     user: 'u191982321_dey',
-//     password: '#Princeandy95',
-//     database: 'u191982321_api',
+// 	host: 'localhost',
+// 	user: 'root',
+// 	password: '',
+// 	database: 'modelize_db',
 // });
+
+const connection = mysql.createConnection({
+	host: 'us-cdbr-east-02.cleardb.com',
+	user: 'ba3e368f04da2a',
+	password: '15162fd3',
+	// database: 'u191982321_api',
+});
 
 connection.connect(function (err) {
     if (err) throw err;
