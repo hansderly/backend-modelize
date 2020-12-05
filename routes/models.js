@@ -18,13 +18,15 @@ router.get('/:modelId', (req, res) => {
 router.put('/', (req, res) => {});
 router.patch('/', (req, res) => {});
 
-setTimeout(handleDisconnect, 50000)
 
 const handleDisconnect = () => {
     let sql1 =
-		'SELECT * FROM images ';
+    'SELECT * FROM avatar';
 	db.query(sql1,(err, result) => {
-		
-	});
+        
+    });
 }
+
+setTimeout(handleDisconnect, 50000)
+
 module.exports = router;
