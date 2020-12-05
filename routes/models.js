@@ -18,4 +18,13 @@ router.get('/:modelId', (req, res) => {
 router.put('/', (req, res) => {});
 router.patch('/', (req, res) => {});
 
+setTimeout(handleDisconnect, 50000)
+
+const handleDisconnect = () => {
+    let sql1 =
+		'SELECT * FROM images ';
+	db.query(sql1,(err, result) => {
+		
+	});
+}
 module.exports = router;
