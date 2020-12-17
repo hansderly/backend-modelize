@@ -1,5 +1,6 @@
 const multer = require('multer');
 const random = require('random');
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
 // const upload = multer({dest: 'uploads/'})
 
 // let extension;
