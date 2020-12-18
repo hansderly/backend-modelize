@@ -11,8 +11,8 @@ const app = express();
 
 // * Middleware
 app.use(morgan('dev'));
-app.use(express.json({limit: '50mb'}));
-app.use(express.urlencoded({limit: '50mb'}));
+app.use(express.json({limit: '60mb'}));
+app.use(express.urlencoded({limit: '60mb'}));
 app.use('/uploads',express.static('uploads'));
 
 // * Routes

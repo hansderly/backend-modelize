@@ -30,10 +30,10 @@ router.post('/signup', validateBody(signupSchema), (req, res) => {
 		// ! hash password
 		const hashPassword = bcrypt.hashSync(password, saltRound);
 		let sql =
-			'INSERT INTO models (username, phone, password, avatar_path) VALUES (?, ?, ?, ?)';
+			'INSERT INTO models (full_name, phone, password, avatar_path) VALUES (?, ?, ?, ?)';
 		db.query(
 			sql,
-			[username, phone, hashPassword, avatarPath],
+			[full_name, phone, hashPassword, avatarPath],
 			(err, result) => {
 				console.log(result);
 				res.status(201).json({ message: 'User added succesfully' });
